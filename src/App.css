@@ -63,10 +63,10 @@ select {
   background: white;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  padding: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   min-width: 650px;
+  position: relative;
 }
 
 .city-card-content {
@@ -85,6 +85,7 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 0.5rem;
 }
 
 .city-title h2 {
@@ -152,4 +153,52 @@ select {
 .chart-controls button:hover {
   background: #e4e6e9;
   border-color: #ccc;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.city-card-container {
+  position: relative;
+  margin-bottom: 0.25rem;
+  padding-top: 0.25rem;
+}
+
+.reorder-controls {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  z-index: 1;
+}
+
+.reorder-button {
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  color: #666;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reorder-button:hover:not(:disabled) {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.reorder-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.city-card.loading {
+  margin-top: 1rem;
 }

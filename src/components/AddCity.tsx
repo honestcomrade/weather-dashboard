@@ -7,7 +7,7 @@ import { CitySelect } from './CitySelect'
 export function AddCity() {
   const [selectedCityId, setSelectedCityId] = useState<string | null>(null)
   const { data: cities, isLoading } = useCities()
-  const { addCity } = useSelectedCities()
+  const { addCity, cities: selectedCities } = useSelectedCities()
 
   const handleAddCity = () => {
     if (!selectedCityId || !cities) return
@@ -24,7 +24,7 @@ export function AddCity() {
       <CitySelect onSelect={(id) => setSelectedCityId(id)} />
       <button
         onClick={handleAddCity}
-        disabled={!selectedCityId || isLoading}
+        disabled={!selectedCityId || isLoading || selectedCities.some(city => city.id === selectedCityId)}
       >
         + Add City
       </button>

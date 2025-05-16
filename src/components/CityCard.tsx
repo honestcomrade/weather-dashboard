@@ -9,7 +9,7 @@ import { WeatherChart } from './WeatherChart'
 
 interface CityCardProps {
   city: City
-  onRemove: (city: string) => void
+  onRemove: (cityId: string) => void
 }
 
 export function CityCard({ city, onRemove }: CityCardProps) {
