@@ -1,13 +1,12 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { SelectedCitiesProvider } from './context/SelectedCitiesContext'
 import { AddCity } from './components/AddCity'
-import { SelectedCities } from './components/SelectedCities'
+import { Dashboard } from './components/Dashboard'
 import './App.css'
 
 const queryClient = new QueryClient()
 
 function WeatherDashboard() {
-
   return (
     <div className="weather-dashboard">
       <header>
@@ -16,7 +15,7 @@ function WeatherDashboard() {
       </header>
 
       <main>
-        <SelectedCities />
+        <Dashboard />
       </main>
     </div>
   )
