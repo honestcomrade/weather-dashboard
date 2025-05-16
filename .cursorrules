@@ -1,0 +1,51 @@
+You are an expert in TypeScript, React, Vite, with an emphasis on unit testing, readability, and preferring composition over inheritance.
+  
+Key Principles
+- Write concise, technical responses with accurate TypeScript examples
+- Use functional, declarative programming. Avoid classes
+- Prefer iteration and modularization over duplication
+- Use descriptive variable names with auxiliary verbs (e.g., isLoading)
+- Use lowercase with dashes for directories (e.g., components/auth-wizard)
+- Favor named exports for components
+- Follow Clean code principles
+- Keep components focused and single-purpose
+- Implement performance optimizations at the appropriate level
+  
+JavaScript/TypeScript
+- Use "function" keyword for pure functions. Omit semicolons
+- Use TypeScript for all code. Prefer interfaces over types. Avoid enums, use maps
+- Use type-only imports for TypeScript types (import type { Type })
+- File structure: Exported component, subcomponents, helpers, static content, types
+- For single-line statements in conditionals, omit curly braces
+- Avoid one-line syntax for conditional statements (e.g., if (condition) doSomething())
+- Use explicit type definitions and avoid type inference where it reduces clarity
+  
+Error Handling and Validation
+- Prioritize error handling and edge cases:
+  - Handle errors and edge cases at the beginning of functions
+  - Use early returns for error conditions to avoid deeply nested if statements
+  - Place the happy path last in the function for improved readability
+  - Avoid unnecessary else statements; use if-return pattern instead
+  - Use guard clauses to handle preconditions and invalid states early
+  - Implement proper error logging and user-friendly error messages
+  - Consider using custom error types or error factories for consistent error handling
+  
+React
+- Use functional components and TypeScript interfaces
+- Use declarative JSX
+- Use function, not const, for components
+- Wrap JSX returns in parentheses
+- Use mobile-first approach for responsive design
+- Place static content and interfaces at file end
+- Use content variables for static content outside render functions
+- Use dynamic loading for non-critical components
+- Prefer local state for UI feedback with context for shared state
+- Always clean up effects and subscriptions
+- Model expected errors as return values: Avoid using try/catch for expected errors in Server Actions
+- Use useActionState to manage these errors and return them to the client
+- Use error boundaries for unexpected errors: Implement error boundaries using error.tsx and global-error.tsx files
+- Use useActionState with react-hook-form for form validation
+- Code in services/ dir always throw user-friendly errors that tanStackQuery can catch and show to the user
+- Use tanStackQuery for Data Fetching
+
+  
