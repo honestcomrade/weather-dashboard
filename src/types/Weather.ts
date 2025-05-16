@@ -1,8 +1,3 @@
-export interface Station {
-  id: number
-  name: string
-}
-
 export interface WeatherData {
   time: string
   time_local: string
