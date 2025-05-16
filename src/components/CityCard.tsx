@@ -5,6 +5,7 @@ import { fetchCurrentWeatherData, fetchHistoricalWeatherData } from '../services
 import type { City } from '../types/City'
 import type { WeatherData } from '../types/Weather'
 import { WeatherConditions } from './WeatherConditions'
+import { WeatherChart } from './WeatherChart'
 
 interface CityCardProps {
   city: City
@@ -17,7 +18,7 @@ export function CityCard({ city, onRemove }: CityCardProps) {
     queryFn: () => fetchCurrentWeatherData(city.id)
   })
 
-  const { data: historicalWeatherData, isLoading: historicalWeatherLoading, error: historicalWeatherError } = useQuery<WeatherData>({
+  const { data: historicalWeatherData, isLoading: historicalWeatherLoading, error: historicalWeatherError } = useQuery<WeatherData[]>({
     queryKey: ['historicalWeather', city],
     queryFn: () => fetchHistoricalWeatherData(city.id)
   })
@@ -30,16 +31,17 @@ export function CityCard({ city, onRemove }: CityCardProps) {
 
   return (
     <div className="city-card">
-      <div className="city-card-header">
-        <h2>{city.name}</h2>
-        <button onClick={() => onRemove(city.id)}>Remove</button>
-      </div>
       <div className="city-card-content">
-        <div className="current-weather">
-          {currentWeather}
+        <div className="left-column">
+          <div className="city-title">
+            <h2>{city.name}</h2>
+          </div>
+          <div className="current-weather">
+            {currentWeather}
+          </div>
+          <button onClick={() => onRemove(city.id)}>Remove</button>
         </div>
         <div className="historical-data">
-          <h3>Historical Data</h3>
           <div className="chart-container">
             {historicalWeatherLoading && (
               <p>Loading historical data for {city.name}...</p>
@@ -48,7 +50,7 @@ export function CityCard({ city, onRemove }: CityCardProps) {
               <p>Error loading historical data for {city.name}</p>
             )}
             {historicalWeatherData && (
-              <pre>{JSON.stringify(historicalWeatherData, null, 2)}</pre>
+              <WeatherChart data={historicalWeatherData} />
             )}
           </div>
         </div>
