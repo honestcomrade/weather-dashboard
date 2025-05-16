@@ -63,7 +63,7 @@ select {
   background: white;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   min-width: 650px;
   position: relative;
@@ -164,7 +164,7 @@ select {
 
 .city-card-container {
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.25rem;
   padding-top: 0.25rem;
 }
 
@@ -197,4 +197,8 @@ select {
 .reorder-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.city-card.loading {
+  margin-top: 1rem;
 }
