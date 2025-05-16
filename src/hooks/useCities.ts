@@ -8,7 +8,7 @@ async function fetchCities(): Promise<City[]> {
       'Origin': window.location.origin
     }
   })
-  if (!response.ok) throw new Error('Failed to fetch stations')
+  if (!response.ok) throw new Error('Failed to fetch cities')
   return response.json()
 }
 
