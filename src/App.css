@@ -69,34 +69,6 @@ select {
   position: relative;
 }
 
-.drag-handle {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  font-size: 12px;
-  color: #666;
-  cursor: grab;
-  padding: 1px 12px;
-  border-radius: 4px;
-  background: #f5f5f5;
-  border: 1px solid #ddd;
-  user-select: none;
-  line-height: 1;
-  min-width: 32px;
-  text-align: center;
-  z-index: 1;
-}
-
-.drag-handle:hover {
-  background: #e0e0e0;
-  color: #333;
-}
-
-.drag-handle:active {
-  cursor: grabbing;
-  background: #d0d0d0;
-}
-
 .city-card-content {
   display: grid;
   grid-template-columns: 250px 1fr;
@@ -113,6 +85,7 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 0.5rem;
 }
 
 .city-title h2 {
@@ -189,13 +162,39 @@ select {
   padding: 1rem;
 }
 
-.draggable-card {
+.city-card-container {
   position: relative;
   margin-bottom: 1.5rem;
-  cursor: grab;
+  padding-top: 0.25rem;
 }
 
-.draggable-card.dragging {
+.reorder-controls {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  z-index: 1;
+}
+
+.reorder-button {
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  color: #666;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reorder-button:hover:not(:disabled) {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.reorder-button:disabled {
   opacity: 0.5;
-  cursor: grabbing;
+  cursor: not-allowed;
 }
