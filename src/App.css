@@ -1,13 +1,35 @@
-.app {
+body {
+  margin: 0;
+  padding: 40px 20px;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+.weather-dashboard {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
 }
 
 h1 {
   font-size: 2rem;
-  margin-bottom: 1.5rem;
+  margin: 0;
   color: #1a1a1a;
+  white-space: nowrap;
+}
+
+.add-city {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 button {
@@ -43,4 +65,17 @@ select {
   padding: 1.5rem;
   margin-bottom: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.city-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.city-header h2 {
+  margin: 0;
+  color: #1a1a1a;
 }
